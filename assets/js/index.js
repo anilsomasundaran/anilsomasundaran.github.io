@@ -47,3 +47,32 @@ function handleAccordianClick() {
 skillHeaders.forEach((ele) => {
   ele.addEventListener("click", handleAccordianClick);
 });
+
+//Experience Tab Selection
+
+const tabs = document.querySelectorAll("[data-target]"),
+  tabSections = document.querySelectorAll(".qualification__section"),
+  ACTIVE_CLASS = "qualification__active",
+  INACTIVE_CLASS = "qualification__inactive";
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const tabId = tab.dataset.target;
+    tabs.forEach((t) => {
+      t.classList.remove("tab-active");
+    });
+    tab.classList.add("tab-active");
+
+    tabSections.forEach((section) => {
+      if (section.classList.contains(ACTIVE_CLASS)) {
+        section.classList.remove(ACTIVE_CLASS);
+        section.classList.add(INACTIVE_CLASS);
+      }
+
+      if (section.getAttribute("id") === tabId) {
+        section.classList.remove(INACTIVE_CLASS);
+        section.classList.add(ACTIVE_CLASS);
+      }
+    });
+  });
+});

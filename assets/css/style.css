@@ -440,6 +440,21 @@ img {
   transform: translate(6px, -7px);
 }
 
+.qualification__active {
+  display: block;
+}
+
+.qualification__inactive {
+  display: none;
+}
+
+.tab-active {
+  color: var(--primary-color);
+}
+.tab-active:hover {
+  color: var(--primary-color-alternative);
+}
+
 .button {
   display: inline-block;
   background-color: var(--primary-color);
