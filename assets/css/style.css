@@ -10,6 +10,7 @@
   /* HSL Colors
      --first-color: #4070F4;
     --second-color: #0E2431;
+    226 56 30
   */
   --primary-color: hsl(var(--base-color), 89%, 60%); /*#6E57E0 69%, 61%*/
   --primary-color-secondary: hsl(var(--base-color), 63%, 25%);
@@ -516,6 +517,14 @@ img {
   justify-self: center;
   align-self: center;
 }
+.projects__container {
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project__content {
+}
+
 .button {
   display: inline-block;
   background-color: var(--primary-color);
@@ -538,6 +547,15 @@ img {
 .button--flex {
   display: inline-flex;
   align-items: center;
+}
+
+.button--link {
+}
+
+.button--link:hover {
+}
+
+.button--small {
 }
 
 /*################ Nav-bar ###################*/
