@@ -476,16 +476,18 @@ img {
 .certification__snapshot-detail ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 1.5rem;
 }
 .certification__snapshot-detail-title {
+  text-align: center;
+  display: block;
   color: var(--text-color);
   font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);
 }
 
 .certification__snapshot-detail-desc {
-  display: inline-block;
+  display: block;
+  text-align: center;
   color: var(--text-color-light);
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
@@ -497,6 +499,10 @@ img {
 
 .certification__snapshot-detail li:last-child {
   border-right: 0;
+}
+
+.certification__title {
+  margin-bottom: var(--mb-2);
 }
 
 .certificaiton__data {
