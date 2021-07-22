@@ -71,6 +71,30 @@
   }
 }
 
+body.dark-theme {
+  --primary-color-secondary: hsl(var(--base-color), 30%, 8%);
+  --text-color: hsl(var(--base-color), 8%, 95%);
+  --title-color: hsl(var(--base-color), 8%, 75%);
+  --input-color: hsl(var(--base-color), 29%, 16%);
+  --body-color: hsl(var(--base-color), 28%, 12%);
+  --container-color: hsl(var(--base-color), 29%, 16%);
+}
+
+.nav__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.theme-icon {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-right: var(--mb-0-5);
+}
+
+.theme-icon:hover {
+  color: var(--primary-color);
+}
+
 /*################# BASE ################*/
 * {
   box-sizing: border-box;
@@ -138,6 +162,11 @@ img {
 }
 
 /*################ Layout ###################*/
+
+.sticky-header {
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.5);
+}
+
 .section {
   padding: 2rem 0 4rem;
 }
@@ -794,7 +823,7 @@ img {
 }
 
 .nav__toggle {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -838,6 +867,10 @@ img {
   color: var(--primary-color);
 }
 
+.active-link {
+  color: var(--primary-color);
+}
+
 .test {
   display: block;
   width: 0;
@@ -866,6 +899,31 @@ img {
 
 .nav__close:hover {
   color: var(--primary-color-alternative);
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: -20%;
+  right: 1rem;
+  border-radius: 0.4rem;
+  padding: 0 0.5rem;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+}
+
+.scroll-up:hover {
+  background-color: var(--primary-color-alternative);
+}
+
+.scroll--icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.show-scroll-up {
+  bottom: 5rem;
 }
 
 /* for Small devices*/

@@ -100,4 +100,81 @@ modelCloseBtns.forEach((btn) => {
   });
 });
 
-console.log(modelOpenBtns);
+//console.log(modelOpenBtns);
+
+const sections = document.querySelectorAll("section[id]");
+console.log(sections);
+function scrollActiveSection() {
+  const scrollY = window.pageYOffset;
+  sections.forEach((curSection) => {
+    const height = curSection.offsetHeight;
+    const secTop = curSection.offsetTop - 50;
+    const sectionId = curSection.getAttribute("id");
+
+    if (scrollY > secTop && scrollY <= secTop + height) {
+      document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")
+        .classList.add("active-link");
+    } else {
+      document
+        .querySelector(".nav__menu a[href*=" + sectionId + "]")
+        .classList.remove("active-link");
+    }
+  });
+}
+window.addEventListener("scroll", scrollActiveSection);
+
+function stickyHeaderOnScroll() {
+  const headerSec = document.getElementById("header");
+  if (this.scrollY >= 80) {
+    headerSec.classList.add("sticky-header");
+  } else {
+    headerSec.classList.remove("sticky-header");
+  }
+}
+
+window.addEventListener("scroll", stickyHeaderOnScroll);
+
+//show scroll up button
+
+function showScrollUpBtnOnScroll() {
+  const scrollUp = document.getElementById("scrollup");
+  if (this.scrollY >= 560) {
+    scrollUp.classList.add("show-scroll-up");
+  } else {
+    scrollUp.classList.remove("show-scroll-up");
+  }
+}
+
+window.addEventListener("scroll", showScrollUpBtnOnScroll);
+
+//theme selection
+
+const themSelector = document.getElementById("theme-selector");
+const darkThemeClass = "dark-theme";
+const darkThemeIcon = "uil-sun";
+
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkThemeClass) ? "dark" : "light";
+
+const getCurrentIcon = () =>
+  themSelector.classList.contains(darkThemeIcon) ? "uil-moon" : "uil-sun";
+
+if (selectedTheme) {
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkThemeClass
+  );
+  themSelector.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
+    darkThemeIcon
+  );
+}
+
+themSelector.addEventListener("click", () => {
+  document.body.classList.toggle(darkThemeClass);
+  themSelector.classList.toggle(darkThemeIcon);
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-theme", getCurrentIcon());
+});
