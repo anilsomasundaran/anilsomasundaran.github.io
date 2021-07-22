@@ -76,3 +76,28 @@ tabs.forEach((tab) => {
     });
   });
 });
+
+//open and close model
+
+const modelOpenBtns = document.querySelectorAll(".project__button"),
+  modelCloseBtns = document.querySelectorAll(".project__modal-close");
+
+modelOpenBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    //console.log(btn);
+    //console.log(btn.dataset.target);
+    const model = document.querySelector(btn.dataset.target);
+    model.classList.add("project__modal-active");
+  });
+});
+
+modelCloseBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    //console.log(btn);
+    //console.log(btn.parentElement.parentElement.getAttribute("id"));
+    const modelId = btn.parentElement.parentElement.getAttribute("id");
+    document.getElementById(modelId).classList.remove("project__modal-active");
+  });
+});
+
+console.log(modelOpenBtns);
