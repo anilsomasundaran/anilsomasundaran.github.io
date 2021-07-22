@@ -455,6 +455,61 @@ img {
   color: var(--primary-color-alternative);
 }
 
+.certification__snapshot {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  margin-bottom: var(--mb-2);
+}
+
+.certification__snapshot-title {
+  color: var(--primary-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.certification__snapshot-subtitle {
+  color: var(--primary-color);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.certification__snapshot-detail ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+}
+.certification__snapshot-detail-title {
+  color: var(--text-color);
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.certification__snapshot-detail-desc {
+  display: inline-block;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+.certification__snapshot-detail li {
+  border-right: 1px solid var(--primary-color);
+}
+
+.certification__snapshot-detail li:last-child {
+  border-right: 0;
+}
+
+.certificaiton__data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+}
+
+.cert__image {
+  width: 100px;
+  justify-self: center;
+  align-self: center;
+}
 .button {
   display: inline-block;
   background-color: var(--primary-color);
@@ -542,6 +597,20 @@ img {
 
 .nav__link:hover {
   color: var(--primary-color);
+}
+
+.test {
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #008ed5;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav__link:hover > .test {
+  visibility: visible;
+  width: 100%;
 }
 
 .nav__icon {
