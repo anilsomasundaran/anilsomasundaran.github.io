@@ -22,7 +22,8 @@
   --input-color: hsl(var(--base-color), 70%, 96%);
   --body-color: hsl(var(--base-color), 60%, 99%);
   --container-color: #fff;
-
+  --scroll-bar-color: hsl(var(--base-color), 12%, 90%);
+  --scroll-bar-thumb-color: hsl(var(--base-color), 12%, 80%);
   /*###### Size ##########*/
 
   --header-height: 3rem;
@@ -78,6 +79,8 @@ body.dark-theme {
   --input-color: hsl(var(--base-color), 29%, 16%);
   --body-color: hsl(var(--base-color), 28%, 12%);
   --container-color: hsl(var(--base-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--base-color), 12%, 48%);
+  --scroll-bar-thumb-color: hsl(var(--base-color), 12%, 36%);
 }
 
 .nav__buttons {
@@ -926,6 +929,21 @@ img {
   bottom: 5rem;
 }
 
+::-webkit-scrollbar {
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-thumb-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-light);
+}
+
 /* for Small devices*/
 
 @media screen and (max-width: 350px) {
@@ -940,11 +958,64 @@ img {
   .nav__list {
     column-gap: 0rem;
   }
+
+  .home__content {
+    grid-template-columns: 0.25fr 3fr;
+  }
+
+  .skill__title {
+    font-size: var(--normal-font-size);
+  }
+
+  .qualification__detail {
+    column-gap: 0.5rem;
+  }
+
+  .project__modal {
+    padding: 0 0.5rem;
+  }
 }
 
 /* for medium devices*/
 
 @media screen and (min-width: 568px) {
+  .home__content {
+    grid-template-columns: max-content 1fr 1fr;
+  }
+
+  .home__data {
+    grid-column: initial;
+  }
+
+  .home__profile_img {
+    order: 1;
+    justify-self: center;
+  }
+
+  .about_container,
+  .projects__container,
+  .contactme__container,
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qualification__sections,
+  .certification__content {
+    display: grid;
+  }
+  .qualification__sections,
+  .skills__container,
+  .certification__content {
+    grid-template-columns: 0.85fr;
+    justify-content: center;
+  }
+
+  .certificaiton__data {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__links {
+    justify-self: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -984,22 +1055,142 @@ img {
 
   .nav__list {
     display: flex;
-    column-gap: 2rem;
+    column-gap: 1rem;
   }
 
   .nav__menu {
     margin-left: auto;
   }
+
+  .theme-icon {
+    margin: 0;
+  }
+
+  .home__container {
+    row-gap: 5rem;
+  }
+
+  .home__content {
+    column-gap: 2rem;
+    padding-top: 5.5rem;
+  }
+
+  .home__profile_bg {
+    width: 270px;
+  }
+
+  .home__scroll {
+    display: block;
+  }
+
+  .home__scroll-button {
+    margin-left: 3rem;
+  }
+
+  .about_container {
+    column-gap: 5rem;
+  }
+
+  .about__img {
+    width: 350px;
+  }
+
+  .about__description {
+    text-align: justify;
+  }
+
+  .about__more-info {
+    justify-content: space-between;
+  }
+
+  .about__buttons {
+    justify-content: initial;
+  }
+
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qualification__tabs {
+    justify-content: center;
+  }
+
+  .qualification__tab {
+    margin: 0 var(--mb-1);
+  }
+
+  .qualification__sections {
+    grid-template-columns: 0.5fr;
+  }
+
+  .certification__content {
+    display: block;
+  }
+
+  .certificaiton__data {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__links {
+    justify-self: start;
+    column-gap: 1rem;
+    row-gap: 0rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__socials {
+    justify-self: flex-end;
+  }
+
+  .footer__copy {
+    margin-top: 4.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .header,
   .main,
   .footer__container {
     padding: 0;
   }
 
+  .nav__list {
+    column-gap: 2rem;
+  }
+
   .nav {
     max-width: 1200px;
+  }
+
+  .home__profile_bg {
+    width: 370px;
+  }
+
+  .home__social {
+    transform: translateX(-6rem);
+  }
+
+  .projects__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contactme__form {
+    width: 468px;
+  }
+
+  .footer__container {
+    max-width: 1200px;
+  }
+
+  .footer__links {
+    justify-self: start;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
