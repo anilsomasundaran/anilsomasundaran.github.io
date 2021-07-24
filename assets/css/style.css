@@ -12,7 +12,8 @@
     --second-color: #0E2431;
     226 56 30
   */
-  --primary-color: hsl(var(--base-color), 89%, 60%); /*#6E57E0 69%, 61%*/
+  --primary-color: hsl(var(--base-color), 69%, 39%);
+  /*#6E57E0 69%, 61% 89% 60%*/
   --primary-color-secondary: hsl(var(--base-color), 63%, 25%);
   --primary-color-alternative: hsl(var(--base-color), 57%, 53%);
   --primary-color-light: hsl(var(--base-color), 92%, 85%);
@@ -1047,6 +1048,11 @@ img {
     column-gap: 1rem;
   }
 
+  .nav,
+  .footer__container {
+    max-width: 1200px;
+  }
+
   .nav__icon,
   .nav__close,
   .nav__toggle {
@@ -1156,14 +1162,17 @@ img {
   .main,
   .footer__container {
     padding: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .nav,
+  .footer__container {
+    max-width: 1200px;
   }
 
   .nav__list {
     column-gap: 2rem;
-  }
-
-  .nav {
-    max-width: 1200px;
   }
 
   .home__profile_bg {
@@ -1182,15 +1191,76 @@ img {
     width: 468px;
   }
 
-  .footer__container {
-    max-width: 1200px;
-  }
-
   .footer__links {
     justify-self: start;
     column-gap: 2rem;
     row-gap: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    padding: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .footer__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav,
+  .footer__container {
+    max-width: 1200px;
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+
+  .home__profile_bg {
+    width: 420px;
+  }
+
+  .contactme__form {
+    width: 568px;
+  }
+
+  .certification__content {
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    column-gap: 2rem;
+  }
+  .certification__snapshot {
+    align-self: center;
+  }
+
+  .certification__title {
+    text-align: center;
+  }
+  .qualification__tabs {
+    justify-content: space-around;
+  }
+  .qualification__tab {
+    color: var(--primary-color);
+    cursor: initial;
+  }
+
+  .qualification__sections {
+    grid-template-columns: 0.1fr 1fr 0.25fr 1fr;
+  }
+
+  .qualification__section {
+    display: block;
+    justify-self: center;
+  }
+  #education {
+    grid-column: 2/3;
+  }
+  #work {
+    grid-column: 4/5;
   }
 }
